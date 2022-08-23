@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kodake\\Desktop\\GloboAPIBackEnd\\BackEnd\\BackEnd\\BackEnd.csproj": {}
+    "C:\\Users\\Kodake\\Desktop\\GloboAPI\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kodake\\Desktop\\GloboAPIBackEnd\\BackEnd\\BackEnd\\BackEnd.csproj": {
+    "C:\\Users\\Kodake\\Desktop\\GloboAPI\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kodake\\Desktop\\GloboAPIBackEnd\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\Kodake\\Desktop\\GloboAPI\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Users\\Kodake\\Desktop\\GloboAPIBackEnd\\BackEnd\\BackEnd\\BackEnd.csproj",
+        "projectPath": "C:\\Users\\Kodake\\Desktop\\GloboAPI\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Kodake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kodake\\Desktop\\GloboAPIBackEnd\\BackEnd\\BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\Kodake\\Desktop\\GloboAPI\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kodake\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,9 +56,13 @@
               "target": "Package",
               "version": "[6.0.8, )"
             },
+            "MiniValidation": {
+              "target": "Package",
+              "version": "[0.6.0-pre.20220527.55, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.4.0, )"
             }
           },
           "imports": [
