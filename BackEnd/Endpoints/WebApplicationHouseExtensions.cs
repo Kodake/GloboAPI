@@ -1,5 +1,6 @@
 ﻿using BackEnd.Data;
 using BackEnd.DTOS;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MiniValidation;
 
@@ -9,10 +10,10 @@ namespace BackEnd.Endpoints
     {
         public static void MapHouseEndpoints(this WebApplication app)
         {
-            app.MapGet("/houses", (IHouseRepository repo) => repo.GetAll())
+            app.MapGet("/houses", [Authorize](IHouseRepository repo) => repo.GetAll())
             .Produces<HouseDTO[]>(StatusCodes.Status200OK);
 
-            app.MapGet("/house/{houseId:int}", async (int houseId, IHouseRepository repo) =>
+            app.MapGet("/house/{houseId:int}", [Authorize] async (int houseId, IHouseRepository repo) =>
             {
                 var house = await repo.Get(houseId);
 
@@ -25,7 +26,7 @@ namespace BackEnd.Endpoints
                 return Results.Ok(house);
             }).ProducesProblem(404).Produces<HouseDetailDTO>(StatusCodes.Status200OK);
 
-            app.MapPost("/houses", async ([FromBody] HouseDetailDTO dto, IHouseRepository repo) =>
+            app.MapPost("/houses", [Authorize("admin")] async ([FromBody] HouseDetailDTO dto, IHouseRepository repo) =>
             {
                 if (!MiniValidator.TryValidate(dto, out var errors))
                     return Results.ValidationProblem(errors);
@@ -35,7 +36,7 @@ namespace BackEnd.Endpoints
             }).Produces<HouseDetailDTO>(StatusCodes.Status201Created)
             .ProducesValidationProblem();
 
-            app.MapPut("/houses", async ([FromBody] HouseDetailDTO dto, IHouseRepository repo) =>
+            app.MapPut("/houses", [Authorize] async ([FromBody] HouseDetailDTO dto, IHouseRepository repo) =>
             {
                 if (!MiniValidator.TryValidate(dto, out var errors))
                     return Results.ValidationProblem(errors);
@@ -51,7 +52,7 @@ namespace BackEnd.Endpoints
             }).ProducesProblem(404).Produces<HouseDetailDTO>(StatusCodes.Status200OK)
             .ProducesValidationProblem();
 
-            app.MapDelete("/house/{houseId:int}", async (int houseId, IHouseRepository repo) =>
+            app.MapDelete("/house/{houseId:int}", [Authorize] async (int houseId, IHouseRepository repo) =>
             {
                 if (await repo.Get(houseId) == null)
                 {

@@ -107,3 +107,6 @@ C:\Users\Kodake\Desktop\GloboAPI\BackEnd\obj\Debug\net6.0\BackEnd.pdb
 C:\Users\Kodake\Desktop\GloboAPI\BackEnd\obj\Debug\net6.0\BackEnd.genruntimeconfig.cache
 C:\Users\Kodake\Desktop\GloboAPI\BackEnd\obj\Debug\net6.0\ref\BackEnd.dll
 C:\Users\Kodake\Desktop\GloboAPI\BackEnd\bin\Debug\net6.0\MiniValidation.dll
+C:\Users\Kodake\Desktop\GloboAPI\BackEnd\obj\Debug\net6.0\BackEnd.RazorAssemblyInfo.cache
+C:\Users\Kodake\Desktop\GloboAPI\BackEnd\obj\Debug\net6.0\BackEnd.RazorAssemblyInfo.cs
+C:\Users\Kodake\Desktop\GloboAPI\BackEnd\bin\Debug\net6.0\BackEnd.staticwebassets.runtime.json
